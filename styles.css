@@ -14,6 +14,12 @@ body {
     margin: 0 auto;
 }
 
+.container-projects {
+    width: 90%;
+    max-width: 1200px;
+    padding-bottom: 80px;
+}
+
 .section-title {
     text-align: center;
     color: #111827;
@@ -178,7 +184,7 @@ body {
 /*SOBRE MI*/
 
 .about {
-    padding-top: 20px;
+    padding-top: 70px;
     /*padding: 70px 0; --- IGNORE ---*/
     background: #F9FAFB;
 }
