@@ -225,7 +225,7 @@ body {
 
 .project-card {
     background: #E5E7EB;
-    max-width: 840px;
+    max-width: 1080px;
     min-height: 280px;
     padding: 40px;
     border-radius: 3px;
@@ -298,9 +298,15 @@ body {
 
 .contact {
     background: #1f2937;
-    color: white;
     padding: 80px 0;
     text-align: center;
+}
+
+.contact-t1{
+    color: #FFFFFF;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .contact h2 {
@@ -309,24 +315,35 @@ body {
 }
 
 .contact-subtitle {
-    color: #9ca3af;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 600;
     margin-bottom: 30px;
 }
 
 .contact-line {
-    width: 200px;
+    width: 600px;
     height: 1px;
-    background: #374151;
-    margin: 20px auto;
+    background: #E5E7EB;
+    margin: 16px auto;
+}
+
+.contact-line-2 {
+    width: 400px;
+    height: 1px;
+    background: #E5E7EB;
+    margin: 16px auto;
 }
 
 .contact-info {
     display: flex;
     justify-content: center;
     gap: 30px;
+    text-align: center;
     margin-top: 20px;
-    font-size: 14px;
-    color: #d1d5db;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
 }
 
 /*----------------------------------------------------*/
@@ -360,6 +377,7 @@ body {
     .project-card {
         flex-direction: column;
         text-align: center;
+
     }
 
     .project-image {
