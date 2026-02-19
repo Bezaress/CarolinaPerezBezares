@@ -18,6 +18,7 @@ body {
     width: 90%;
     max-width: 1200px;
     padding-bottom: 80px;
+    margin: 0 auto;
 }
 
 .section-title {
@@ -352,13 +353,31 @@ body {
 .contact-info {
     display: flex;
     justify-content: center;
-    gap: 30px;
     text-align: center;
     margin-top: 20px;
     font-weight: 600;
     font-size: 16px;
     color: #FFFFFF;
 }
+
+.espacio {
+    width: 12px;
+}
+
+
+.material-icons, 
+.material-symbols-outlined {
+    font-size: 16px;     
+    color: inherit;
+}
+
+.container-email,
+.container-repo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+*/
 
 /*----------------------------------------------------*/
 
