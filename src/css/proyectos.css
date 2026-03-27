@@ -141,7 +141,7 @@ body {
 /* BOTONES */
 
 .hero-buttons {
-    display: flex;
+    display: inline-flex;
     gap: 12px;
 }
 
@@ -372,90 +372,196 @@ body {
     color: inherit;
 }
 
-.container-email, 
+.container-email,
 .container-repo {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    /*----------------------------------------------------*/
 }
-    /*----------------------------------------------------*/
 
+/*RESPONSIVE*/
 
-    /*RESPONSIVE*/
+@media (max-width: 768px) {
 
-    @media (max-width: 768px) {
-
-        .hero-content {
-            flex-direction: column;
-            text-align: center;
-            padding: 48 24px;
-            gap: 24px;
-        }
-
-        .hero-text {
-            max-width: 100%;
-        }
-
-        .hero-image img {
-            width: 280px;
-            margin-top: 30px;
-        }
-
-        .about-cards {
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .project-card {
-            flex-direction: column;
-            text-align: center;
-
-        }
-
-        .project-image {
-            width: 100%;
-            max-width: 280px;
-            height: 160px;
-        }
-
-        .contact-info {
-            flex-direction: column;
-            gap: 10px;
-        }
-
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 48px 24px;
+        gap: 24px;
     }
 
-    /*----------------------------------------------------*/
+    .hero-text {
+        max-width: 100%;
+    }
 
+    .cultura-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 48px 24px;
+        gap: 24px;
+    }
 
-    /*TRANSICIONES GENERALES*/
+    .cultura-text {
+        max-width: 100%;
+    }
 
-    button,
-    a,
-    .card,
+    .hero-image img {
+        width: 280px;
+        margin-top: 30px;
+    }
+
+    .about-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .project-card {
-        transition: all 0.3s ease;
+        flex-direction: column;
+        text-align: center;
+
     }
 
-    /*----------------------------------------------------*/
-
-
-    /*TARJETAS SOBRE MI*/
-
-    .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    .project-image {
+        width: 100%;
+        max-width: 280px;
+        height: 160px;
     }
 
-    /*----------------------------------------------------*/
-
-
-    /*PROYECTOS*/
-
-    .project-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
     }
+}
 
-    /*----------------------------------------------------*/
+
+
+/*----------------------------------------------------*/
+
+
+/*TRANSICIONES GENERALES*/
+
+button,
+a,
+.card,
+.project-card {
+    transition: all 0.3s ease;
+}
+
+/*----------------------------------------------------*/
+
+
+/*TARJETAS SOBRE MI*/
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/*----------------------------------------------------*/
+
+
+/*PROYECTOS*/
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+/*----------------------------------------------------*/
+
+/* ---------------------------------CULTURA------------------------------ */
+
+/*---------BODY-----------*/
+
+
+.cultura {
+    padding: 80px 0;
+    background: white;
+}
+
+.cultura-text{
+    max-width: 520px;
+}
+
+
+.cultura h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.cultura h2 {
+    font-size: 22px;
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.cultura p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.cultura-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80 120px;
+    gap: 40px;
+}
+
+
+.container-cultura-info {
+    width: 90%;
+    max-width: 1200px;
+    padding-bottom: 80px;
+    margin: 0 auto;
+    background-color: #111827;
+}
+
+.top-cultura {
+    padding: 2000px;
+    background: #113b64;
+}
+
+
+/*----------DATOS------------*/
+.date {
+    padding-top: 70px;
+    /*padding: 70px 0; --- IGNORE ---*/
+    background: #F9FAFB;
+}
+
+.date-about {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 55px;;
+}
+
+.date-cards {
+    background: #E5E7EB;
+    padding: 20px;
+    border-radius: 3px;
+    width: 220px;
+}
+
+.date-text {
+    font: size 16px;
+    color: #6B7280;
+    font-weight: 400;
+    text-align: center;
+}
+
+.date h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.section-date-divider {
+    width: 100%;
+    height: 1px;
+    background: #E5E7EB;
+    margin: 65px 0;
+}
