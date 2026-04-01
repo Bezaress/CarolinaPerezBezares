@@ -1,4 +1,4 @@
-<script>
+/*<script>
 
     document.addEventListener("DOMContentLoaded", ()=>{
 
@@ -32,4 +32,4 @@
 
 });
 
-</script>
+</script>*/
