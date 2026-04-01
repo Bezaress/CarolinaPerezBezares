@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Cultura Viva</title>
+
+    <link rel="stylesheet" href="/proyectos/eventos-culturales/src/css/checkout.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="container nav-content">
+
+            <div class="logo">
+                🎭 Cultura Viva
+            </div>
+
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Eventos</a>
+
+                <div class="user">
+                    🔔
+                    <img src="/proyectos/eventos-culturales/assets/img/avatar.png">
+                    ⌄
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="container checkout-grid">
+
+        <!-- FORMULARIO -->
+        <section class="card form-card">
+
+            <div class="card-header">
+
+                <h2>PAGAR CON</h2>
+
+                <span class="required">
+                    REQUERIDO
+                </span>
+
+            </div>
+
+
+            <p class="payment-type">
+                💳 Tarjeta de Crédito / Débito
+            </p>
+
+            <p class="cards-accepted">
+                Mastercard, Visa y Amex aceptado
+            </p>
+
+
+
+            <div class="card-logos">
+                <img src="/proyectos/eventos-culturales/assets/img/visa.jpg">
+                <img src="/proyectos/eventos-culturales/assets/img/master.png">
+                <img src="/proyectos/eventos-culturales/assets/img/amex.jpg">
+            </div>
+
+
+
+            <label>
+                Nombre en la tarjeta
+            </label>
+
+            <div class="input-row">
+
+                <input type="text">
+                <input type="text">
+
+            </div>
+
+
+
+            <label>
+                Número de la tarjeta
+            </label>
+
+            <input type="text">
+
+
+
+            <div class="input-row">
+
+                <div>
+                    <label>Fecha de expiración</label>
+                    <input type="text">
+                </div>
+
+
+                <div>
+                    <label>Código de seguridad</label>
+                    <input type="text">
+                </div>
+
+            </div>
+
+
+
+            <div class="checkbox">
+
+                <input type="checkbox">
+
+                <span>
+                    Guardar esta tarjeta para futuras compras
+                </span>
+
+            </div>
+
+
+
+            <label>País</label>
+            <input type="text">
+
+
+            <label>Dirección línea 1</label>
+            <input type="text">
+
+
+            <label>Dirección línea 2 (Opcional)</label>
+            <input type="text">
+
+
+            <label>Ciudad</label>
+            <input type="text">
+
+
+            <label>Código postal</label>
+            <input type="text">
+
+
+            <label>Número de teléfono</label>
+            <input type="text">
+
+
+
+            <button class="btn-primary">
+                Agregar Tarjeta
+            </button>
+
+        </section>
+
+
+
+        <!-- RESUMEN -->
+        <section class="summary-column">
+
+
+            <div class="card summary-card">
+
+                <div class="summary-header">
+
+                    <h3>
+                        TOTAL
+                    </h3>
+
+                    <span class="price">
+                        $ 2,654.00
+                    </span>
+
+                </div>
+
+
+                <div class="summary-section">
+
+                    <h4>
+                        Boletos
+                    </h4>
+
+                    <div class="row">
+
+                        <span>
+                            Boleto general: $ 1,050.00 ×2
+                        </span>
+
+                        <span>
+                            $ 2,100.00
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="summary-section">
+
+                    <h4>
+                        Cargos
+                    </h4>
+
+                    <div class="row">
+                        <span>Cargo por servicio: $ 252.00 ×2</span>
+                        <span>$504.00</span>
+                    </div>
+
+                    <div class="row">
+                        <span>Procesamiento de orden</span>
+                        <span>$50.00</span>
+                    </div>
+
+                </div>
+
+
+
+                <div class="actions">
+
+                    <a href="#">Editar orden</a>
+                    <a href="#">Cancelar compra</a>
+
+                </div>
+
+
+
+                <button class="btn-primary">
+                    Proceder al pago
+                </button>
+
+            </div>
+
+
+
+            <div class="card ticket-card">
+
+                <div class="ticket-event">
+
+                    <img src="/proyectos/eventos-culturales/assets/img/quijote.jpg">
+
+                    <div>
+
+                        <p class="event-title">
+                            Don Quijote - Ballet Nacional
+                        </p>
+
+                        <p class="event-info">
+                            Domingo, 25 de Octubre, 20:00h
+                        </p>
+
+                        <p class="event-info">
+                            Palacio de Bellas Artes, México
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <h4 class="ticket-title">
+                    BOLETOS
+                </h4>
+
+
+                <div class="ticket-row">
+
+                    <img src="/proyectos/eventos-culturales/assets/img/map.png">
+
+                    <div>
+
+                        <p>
+                            Boleto general x2
+                        </p>
+
+                        <span>
+                            Sector - General B
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <section class="container delivery card">
+
+        <h3>
+            ENTREGA
+        </h3>
+
+
+        <div class="input-row">
+
+            <div>
+
+                <label>
+                    País de residencia
+                </label>
+
+                <select>
+                    <option>México</option>
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Estado
+                </label>
+
+                <select>
+                    <option>CDMX</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="delivery-info">
+
+            <div>
+
+                <p class="bold">
+                    Boleto digital
+                </p>
+
+                <p>
+                    ¡Tu teléfono es tu boleto! Disponibles en tu celular desde la App Ticketmaster en la sección mis
+                    eventos.
+                </p>
+
+            </div>
+
+
+            <span class="free">
+                GRATIS
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <h4>Cultura Viva</h4>
+
+                <p>
+                    Plataforma digital para descubrir eventos culturales,
+                    arte y experiencias en tu ciudad.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h5>Explorar</h5>
+
+                <a>Inicio</a>
+                <a>Eventos</a>
+                <a>Categorías</a>
+                <a>Próximos eventos</a>
+                <a>Destacados</a>
+
+            </div>
+
+
+            <div>
+
+                <h5>Información</h5>
+
+                <a>Sobre nosotros</a>
+                <a>Contacto</a>
+                <a>Colaboradores</a>
+                <a>Preguntas frecuentes</a>
+
+            </div>
+
+
+            <div>
+
+                <h5>Contacto</h5>
+
+                <a>info@culturaviva.com</a>
+                <a>+55 123 45 67</a>
+
+            </div>
+
+
+            <div>
+
+                <h5>Legal</h5>
+
+                <a>Política de privacidad</a>
+                <a>Términos y condiciones</a>
+                <a>Aviso legal</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            2026 Cultura Viva. Todos los derechos reservados
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
