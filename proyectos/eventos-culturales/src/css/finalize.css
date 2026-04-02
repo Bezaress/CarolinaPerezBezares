@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: Inter, sans-serif;
+    background: #F3F4F6;
+    color: #111827;
+
+}
+
+
+/* layout */
+
+.container {
+
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+}
+
+
+/* navbar */
+
+.navbar {
+
+    background: white;
+    border-bottom: 1px solid #E5E7EB;
+
+}
+
+.nav-content {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+
+}
+
+.logo {
+
+    font-weight: 600;
+    font-size: 18px;
+
+}
+
+nav a {
+
+    margin-left: 30px;
+    text-decoration: none;
+    color: #374151;
+
+}
+
+
+/* main */
+
+.main {
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 60px 0;
+
+}
+
+
+/* event */
+
+.event-info h1 {
+
+    font-size: 28px;
+    margin-bottom: 10px;
+
+}
+
+.date {
+
+    color: #6B7280;
+    margin-bottom: 8px;
+
+}
+
+.location {
+
+    color: #6B7280;
+    margin-bottom: 30px;
+
+}
+
+.map {
+
+    background: #E5E7EB;
+    padding: 40px;
+    border-radius: 8px;
+
+}
+
+
+/* ticket card */
+
+.ticket-card {
+
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+}
+
+.ticket-card h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+.ticket-item {
+
+    padding: 20px 0;
+    border-bottom: 1px solid #E5E7EB;
+
+}
+
+.label {
+
+    font-size: 12px;
+    color: #6B7280;
+
+}
+
+.section-name {
+
+    font-weight: 600;
+    margin: 6px 0;
+
+}
+
+
+.price-row {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.counter {
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #F3F4F6;
+    padding: 5px 10px;
+    border-radius: 6px;
+
+}
+
+.counter button {
+
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+
+.buy-btn {
+
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px;
+    background: #C49A57;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+
+}
+
+
+/* footer */
+
+.footer {
+
+    background: #0F172A;
+    color: white;
+    padding: 60px 0;
+
+}
+
+.footer-grid {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+}
+
+.footer h4 {
+
+    margin-bottom: 10px;
+
+}
+
+.footer ul {
+
+    list-style: none;
+
+}
+
+.footer li {
+
+    margin-bottom: 6px;
+    color: #CBD5E1;
+
+}
+
+.footer p {
+
+    color: #CBD5E1;
+
+}
+
+
+.copyright {
+
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #94A3B8;
+
+}
