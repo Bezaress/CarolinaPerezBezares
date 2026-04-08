@@ -1,1 +1,242 @@
- 
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de boletos</title>
+
+    <link rel="stylesheet" href="/proyectos/eventos-culturales/src/css/finalize.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Cultura Viva</div>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Eventos</a>
+            </nav>
+
+            <div class="user">
+                <div class="avatar"></div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- CONTENIDO -->
+    <section class="main container">
+
+        <div class="event-info">
+
+            <h1>Don Quijote - Ballet Nacional</h1>
+
+            <p class="date">Octubre 25 - 20:00 h</p>
+
+            <p class="location">
+                Palacio de Bellas Artes - Ciudad de México
+            </p>
+
+            <div class="map">
+                <img src="/proyectos/eventos-culturales/assets/img/map.png" alt="">
+            </div>
+
+        </div>
+
+
+        <!-- TARJETA -->
+        <aside class="ticket-card">
+
+            <h2>Tu selección</h2>
+
+            <div class="ticket-item">
+
+                <p class="label">SECCIÓN</p>
+
+                <p class="section-name">GENERAL</p>
+
+                <div class="price-row">
+                    <span>$ 1,302.00 cada uno</span>
+
+                    <div class="counter">
+                        <button>-</button>
+                        <span>2</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="ticket-item">
+
+                <p class="label">SECCIÓN</p>
+
+                <p class="section-name">PREFERENTE</p>
+
+                <div class="price-row">
+                    <span>$ 2,258.00 cada uno</span>
+
+                    <div class="counter">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="ticket-item">
+
+                <p class="label">SECCIÓN</p>
+
+                <p class="section-name">VIP</p>
+
+                <div class="price-row">
+                    <span>$ 3,002.00 cada uno</span>
+
+                    <div class="counter">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="ticket-item">
+
+                <p class="label">SECCIÓN</p>
+
+                <p class="section-name">ZONA FAN</p>
+
+                <div class="price-row">
+                    <span>$ 3,746.00 cada uno</span>
+
+                    <div class="counter">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <button class="buy-btn">
+                Comprar boletos
+            </button>
+
+        </aside>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <div>
+                <h3>Cultura Viva</h3>
+
+                <p>
+                    Plataforma digital para descubrir eventos culturales,
+                    arte y experiencias en tu ciudad.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Explorar</h4>
+
+                <ul>
+
+                    <li>Inicio</li>
+
+                    <li>Eventos</li>
+
+                    <li>Categorías</li>
+
+                    <li>Próximos eventos</li>
+
+                    <li>Destacados</li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>Información</h4>
+
+                <ul>
+
+                    <li>Sobre nosotros</li>
+
+                    <li>Contacto</li>
+
+                    <li>Colaboradores</li>
+
+                    <li>Preguntas frecuentes</li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h4>Contacto</h4>
+
+                <p>info@culturaviva.com</p>
+
+                <p>#55 123 45 67</p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+            2026 Cultura Viva. Todos los derechos reservados
+        </div>
+
+    </footer>
+
+    <script>
+
+        document.querySelectorAll(".counter").forEach(counter => {
+
+            const minus = counter.children[0]
+            const number = counter.children[1]
+            const plus = counter.children[2]
+
+            plus.addEventListener("click", () => {
+                number.textContent = parseInt(number.textContent) + 1
+            })
+
+            minus.addEventListener("click", () => {
+                if (number.textContent > 0) {
+                    number.textContent = parseInt(number.textContent) - 1
+                }
+            })
+
+        })
+
+    </script>
+
+</body>
+
+</html>
