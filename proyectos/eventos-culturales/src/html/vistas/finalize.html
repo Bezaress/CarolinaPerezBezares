@@ -215,6 +215,28 @@
 
     </footer>
 
+    <script>
+
+        document.querySelectorAll(".counter").forEach(counter => {
+
+            const minus = counter.children[0]
+            const number = counter.children[1]
+            const plus = counter.children[2]
+
+            plus.addEventListener("click", () => {
+                number.textContent = parseInt(number.textContent) + 1
+            })
+
+            minus.addEventListener("click", () => {
+                if (number.textContent > 0) {
+                    number.textContent = parseInt(number.textContent) - 1
+                }
+            })
+
+        })
+
+    </script>
+
 </body>
 
 </html>
