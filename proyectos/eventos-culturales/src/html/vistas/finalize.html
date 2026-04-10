@@ -49,23 +49,22 @@
             </p>
 
             <div class="map">
-                <svg viewBox="0 0 500 300" class="seat-map">
+                <svg viewBox="0 0 600 320" class="seat-map">
 
                     <!-- ESCENARIO -->
-                    <rect x="20" y="80" width="80" height="140" class="zone stage" data-zone="ESCENARIO" />
+                    <rect x="40" y="90" width="90" height="140" class="zone stage" data-zone="ESCENARIO" />
 
-                    <!-- LUNETA -->
-                    <rect x="120" y="70" width="90" height="160" class="zone" data-zone="GENERAL" />
+                    <!-- GENERAL -->
+                    <path d="M150 70 Q260 20 370 70 L370 250 Q260 300 150 250 Z" class="zone" data-zone="GENERAL" />
 
-                    <rect x="215" y="70" width="90" height="160" class="zone" data-zone="PREFERENTE" />
+                    <!-- PREFERENTE -->
+                    <path d="M390 60 Q470 40 530 70 L530 250 Q470 280 390 260 Z" class="zone" data-zone="PREFERENTE" />
 
-                    <!-- ANFITEATRO -->
-                    <rect x="310" y="60" width="90" height="180" class="zone" data-zone="VIP" />
-
-                    <!-- GALERIA -->
-                    <rect x="405" y="50" width="80" height="200" class="zone" data-zone="ZONA FAN" />
+                    <!-- VIP -->
+                    <path d="M540 50 Q580 60 590 100 L590 220 Q580 260 540 270 Z" class="zone" data-zone="VIP" />
 
                 </svg>
+
             </div>
 
         </div>
@@ -151,6 +150,19 @@
 
             </div>
 
+
+            <div class="total">
+                Total: <span id="total-price">$0</span>
+            </div>
+
+            <div class="summary">
+
+                <h3>Resumen</h3>
+
+                <ul id="summary-list">
+                </ul>
+
+            </div>
 
             <button class="buy-btn">
                 Comprar boletos

@@ -163,10 +163,45 @@ EVENTO
     fill: #C49A57;
 }
 
-.selected-zone{
- margin-bottom:20px;
- font-weight:500;
- color:#6B7280;
+.selected-zone {
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #6B7280;
+}
+
+.stage {
+
+    fill: #9CA3AF;
+    cursor: default;
+
+}
+
+
+/* animación total */
+
+.total {
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding-top: 15px;
+
+    border-top: 1px solid #E5E7EB;
+
+    font-weight: 600;
+    font-size: 18px;
+
+    transition: .25s;
+
+}
+
+.total.updated {
+
+    transform: scale(1.05);
+
+    color: #C49A57;
+
 }
 
 /* escenario */
@@ -279,6 +314,23 @@ CARD BOLETOS
 .buy-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+
+/* TOTAL FINAL */
+.total {
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+    padding-top: 15px;
+
+    border-top: 1px solid #E5E7EB;
+
+    font-weight: 600;
+    font-size: 18px;
+
 }
 
 
