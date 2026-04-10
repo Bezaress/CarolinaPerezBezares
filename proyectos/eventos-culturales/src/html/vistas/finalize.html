@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="/proyectos/eventos-culturales/src/css/finalize.css">
 
+    <rect class="zone" data-zone="VIP" />
+
 </head>
 
 <body>
@@ -42,8 +44,28 @@
                 Palacio de Bellas Artes - Ciudad de México
             </p>
 
+            <p class="selected-zone">
+                Selecciona una zona en el mapa
+            </p>
+
             <div class="map">
-                <img src="/proyectos/eventos-culturales/assets/img/map.png" alt="">
+                <svg viewBox="0 0 500 300" class="seat-map">
+
+                    <!-- ESCENARIO -->
+                    <rect x="20" y="80" width="80" height="140" class="zone stage" data-zone="ESCENARIO" />
+
+                    <!-- LUNETA -->
+                    <rect x="120" y="70" width="90" height="160" class="zone" data-zone="GENERAL" />
+
+                    <rect x="215" y="70" width="90" height="160" class="zone" data-zone="PREFERENTE" />
+
+                    <!-- ANFITEATRO -->
+                    <rect x="310" y="60" width="90" height="180" class="zone" data-zone="VIP" />
+
+                    <!-- GALERIA -->
+                    <rect x="405" y="50" width="80" height="200" class="zone" data-zone="ZONA FAN" />
+
+                </svg>
             </div>
 
         </div>
@@ -215,27 +237,7 @@
 
     </footer>
 
-    <script>
-
-        document.querySelectorAll(".counter").forEach(counter => {
-
-            const minus = counter.children[0]
-            const number = counter.children[1]
-            const plus = counter.children[2]
-
-            plus.addEventListener("click", () => {
-                number.textContent = parseInt(number.textContent) + 1
-            })
-
-            minus.addEventListener("click", () => {
-                if (number.textContent > 0) {
-                    number.textContent = parseInt(number.textContent) - 1
-                }
-            })
-
-        })
-
-    </script>
+    <script src="/proyectos/eventos-culturales/src/js/finalize.js"></script>
 
 </body>
 
