@@ -127,6 +127,59 @@ EVENTO
 }
 
 
+/* MAPA INTERACTIVO */
+
+.map {
+    background: #F9FAFB;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #E5E7EB;
+}
+
+.seat-map {
+    width: 100%;
+    height: auto;
+}
+
+/* zonas */
+
+.zone {
+    fill: #D1D5DB;
+    cursor: pointer;
+    transition: .25s;
+}
+
+/* hover UX */
+
+.zone:hover {
+    fill: #C49A57;
+    transform: scale(1.02);
+    transform-origin: center;
+}
+
+/* zona seleccionada */
+
+.zone.active {
+    fill: #C49A57;
+}
+
+.selected-zone{
+ margin-bottom:20px;
+ font-weight:500;
+ color:#6B7280;
+}
+
+/* escenario */
+
+.stage {
+    fill: #9CA3AF;
+    cursor: default;
+}
+
+.stage:hover {
+    fill: #9CA3AF;
+}
+
 /* =========================
 CARD BOLETOS
 ========================= */
