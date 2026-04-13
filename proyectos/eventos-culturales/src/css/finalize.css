@@ -141,6 +141,83 @@ EVENTO
     height: auto;
 }
 
+
+/* mapa */
+
+.seat-map {
+
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+/* zonas */
+
+.zone {
+
+    stroke: #ffffff;
+    stroke-width: 2;
+
+    transition: .2s;
+
+    cursor: pointer;
+
+}
+
+/* colores */
+
+.fan {
+
+    fill: #D97706;
+
+}
+
+.vip {
+
+    fill: #7C3AED;
+
+}
+
+.preferente {
+
+    fill: #2563EB;
+
+}
+
+.general {
+
+    fill: #059669;
+
+}
+
+/* hover */
+
+.zone:hover {
+
+    opacity: .85;
+    transform: scale(1.01);
+
+}
+
+/* activa */
+
+.zone.active {
+
+    stroke: #111827;
+    stroke-width: 3;
+
+}
+
+/* escenario */
+
+.stage {
+
+    fill: #9CA3AF;
+    cursor: default;
+
+}
+
 /* zonas */
 
 .zone {
@@ -173,6 +250,64 @@ EVENTO
 
     fill: #9CA3AF;
     cursor: default;
+
+}
+
+
+/* =========================
+COLORES ZONAS
+========================= */
+
+.legend {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+}
+
+.legend div {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.color {
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 3px;
+
+}
+
+.color.fan {
+
+    background: #D97706;
+
+}
+
+.color.vip {
+
+    background: #7C3AED;
+
+}
+
+.color.preferente {
+
+    background: #2563EB;
+
+}
+
+.color.general {
+
+    background: #059669;
 
 }
 

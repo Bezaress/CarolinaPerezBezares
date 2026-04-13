@@ -115,10 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             minus.addEventListener("click", () => {
 
-                if (number.textContent > 0) {
+                let value =
+                    parseInt(number.textContent)
+
+                if (value > 0) {
 
                     number.textContent =
-                        parseInt(number.textContent) - 1
+                        value - 1
 
                     updateTotal()
 
@@ -142,44 +145,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
             zone.classList.add("active")
 
-            const selectedZone =
+            selectedZoneText.textContent =
+                "Zona seleccionada: " +
                 zone.dataset.zone
 
-            document
-                .querySelectorAll(".section-name")
-                .forEach(section => {
+        })
 
-                    if (
-                        section.textContent.trim()
-                        === selectedZone
-                    ) {
+        /* activar zona visual */
 
-                        const card =
-                            section.closest(".ticket-item")
+        zones.forEach(z =>
+            z.classList.remove("active")
+        )
 
-                        const number =
-                            card.querySelector(".counter span")
+        zone.classList.add("active")
 
-                        number.textContent =
-                            parseInt(number.textContent) + 1
+        /* buscar card correcta */
 
-                        card.style.background =
-                            "#F9FAFB"
+        const cards =
+            document.querySelectorAll(".ticket-item")
 
-                        card.scrollIntoView({
+        cards.forEach(card => {
 
-                            behavior: "smooth",
-                            block: "center"
+            const name =
+                card
+                    .querySelector(".section-name")
+                    .textContent
+                    .replace(/\s+/g, ' ')
+                    .trim()
 
-                        })
+            if (name === selectedZone) {
 
-                        updateTotal()
+                const number =
+                    card.querySelector(".counter span")
 
-                    }
+                number.textContent =
+                    parseInt(number.textContent) + 1
+
+                card.scrollIntoView({
+
+                    behavior: "smooth",
+                    block: "center"
 
                 })
 
+            }
+
         })
+
+
 
     })
 
