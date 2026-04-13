@@ -271,34 +271,43 @@ body {
 
 
 /* BUTTON */
-
 .btn-primary {
-
     margin-top: 10px;
-
     background: #C8A45A;
     border: none;
-
     padding: 14px;
     width: 100%;
-
     color: white;
     font-size: 15px;
     font-weight: 500;
-
     border-radius: 6px;
-
     cursor: pointer;
 
-    transition: .2s;
-
+    /* Cambiamos la transición para que anime tanto el color, como la posición y la sombra */
+    transition: all 0.3s ease;
 }
 
-
+/* Animación al pasar el cursor (Hover) */
 .btn-primary:hover {
-
     background: #B8954E;
 
+    /* Mueve el botón 3px hacia arriba */
+    transform: translateY(-3px);
+
+    /* Agrega una sombra elegante del mismo tono dorado */
+    box-shadow: 0 8px 15px rgba(200, 164, 90, 0.3);
+}
+
+/* Animación al darle clic (Active) */
+.btn-primary:active {
+    background: #A68545;
+    /* Lo oscurece un poquito más al hacer clic */
+
+    /* Simula que el botón es presionado hacia adentro (se encoge un 3%) */
+    transform: scale(0.97) translateY(0);
+
+    /* Reduce la sombra para dar el efecto de que tocó el fondo */
+    box-shadow: 0 2px 5px rgba(200, 164, 90, 0.2);
 }
 
 
