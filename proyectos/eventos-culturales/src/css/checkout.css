@@ -176,17 +176,40 @@ label {
 }
 
 
-input,
+/* ACTUALIZACIÓN PARA LOS SELECTS */
 select {
-
     width: 100%;
     padding: 12px;
-
     border: 1px solid #E5E7EB;
     border-radius: 6px;
-
     margin-bottom: 16px;
 
+    /* 1. Centramos el texto */
+    text-align: center;
+
+    /* 2. Quitamos la flecha fea por defecto del navegador */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    /* 3. Dibujamos nuestra propia flecha elegante (SVG en código) */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+
+    /* 4. Posicionamos la flecha: alineada a la derecha y centrada verticalmente */
+    background-position: right 15px center;
+    background-size: 16px;
+
+    /* 5. Agregamos espacio a la derecha para que el texto largo no pise la flecha */
+    padding-right: 40px;
+
+    /* Cambiamos el cursor para que indique que es interactivo */
+    cursor: pointer;
+}
+
+/* Opcional: Centrar también las opciones de la lista desplegable */
+select option {
+    text-align: left;
 }
 
 
@@ -195,6 +218,11 @@ select {
     display: flex;
     gap: 16px;
 
+}
+
+.input-row>div,
+.input-row>input {
+    flex: 1;
 }
 
 
@@ -328,7 +356,11 @@ select {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    /* ✨ Esto es la magia que centra el botón verticalmente */
     margin-top: 20px;
+    gap: 30px;
+    /* Le da un espacio "de respiro" para que el texto no choque con el botón */
 
 }
 
@@ -340,10 +372,42 @@ select {
 }
 
 
+/* BOTÓN DE DESCARGA (GRATIS) */
 .free {
-
+    background: #C8A45A;
+    /* Tu color dorado */
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    /* Un poco más compacto que el botón principal */
+    border-radius: 6px;
     font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
 
+    /* Animación suave para todos los cambios */
+    transition: all 0.3s ease;
+
+    /* Para que el botón quede perfectamente centrado a lo alto respecto al texto de la izquierda */
+    align-self: center;
+}
+
+/* Animación al pasar el cursor (Hover) */
+.free:hover {
+    background: #B8954E;
+    transform: translateY(-3px);
+    /* Flota hacia arriba */
+    box-shadow: 0 8px 15px rgba(200, 164, 90, 0.3);
+    /* Sombra elegante */
+}
+
+/* Animación al darle clic (Active) */
+.free:active {
+    background: #A68545;
+    transform: scale(0.97) translateY(0);
+    /* Efecto de presionado */
+    box-shadow: 0 2px 5px rgba(200, 164, 90, 0.2);
+    /* La sombra se reduce */
 }
 
 
@@ -424,3 +488,24 @@ select {
     font-size: 13px;
 
 }
+
+/* FIX PARA EL CHECKBOX */
+.checkbox input[type="checkbox"] {
+    width: auto;
+    /* Evita que tome el 100% de la pantalla */
+    margin-bottom: 0;
+    /* Quita el margen inferior que tienen los demás inputs */
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: #C8A45A;
+    /* Pinta la palomita del color dorado de tu marca */
+}
+
+.checkbox label {
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    /* Evita que el texto se subraye al hacer clic rápido */
+}
+
