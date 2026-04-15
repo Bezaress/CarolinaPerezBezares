@@ -54,25 +54,81 @@ body {
     margin-left: auto; /* ✨ Opcional: empuja el menú a la derecha si hay espacio */
 }
 
-/* PERFIL DE USUARIO (Flexbox) */
-.user-profile {
-    display: flex; /* ✨ Alinea avatar y flecha */
-    align-items: center; /* ✨ Centra verticalmente */
-    gap: 8px; /* ✨ Espacio entre avatar y flecha */
+/* --- MENÚ DE USUARIO MODERNIZADO --- */
+
+/* Contenedor principal */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Un poco más de espacio para que respiren los iconos */
+    margin-left: auto;
 }
 
-/* AVATAR */
-.avatar {
-    width: 32px;
-    height: 32px;
+/* Reset de estilos para los botones transparentes */
+.btn-icon, .btn-profile {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    color: #4B5563; /* Gris oscuro para los iconos */
+    transition: color 0.3s ease;
+}
+
+/* --- CAMPANA DE NOTIFICACIONES --- */
+.btn-icon {
+    position: relative; /* Necesario para posicionar el puntito */
+    padding: 4px; /* Área de clic un poco más grande */
+}
+
+.btn-icon:hover {
+    color: #C8A45A; /* Se pinta de dorado al pasar el mouse */
+}
+
+/* El puntito indicador de nueva notificación */
+.badge-dot {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: #EF4444; /* Rojo alerta moderno */
+    border-radius: 50%;
+    border: 2px solid #FFFFFF; /* Borde blanco para separarlo de la campana */
+}
+
+
+/* --- PERFIL Y AVATAR --- */
+.btn-profile {
+    gap: 10px; /* Espacio entre el avatar y la flecha */
+}
+
+/* Avatar con efecto moderno */
+.avatar-modern {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     object-fit: cover;
+    border: 2px solid transparent; /* Borde invisible por defecto */
+    padding: 2px; /* Espacio para crear el efecto de "anillo" */
+    transition: all 0.3s ease;
 }
 
-/* FLECHA DESPLEGABLE */
-.dropdown-arrow {
-    color: #4B5563;
-    font-size: 14px;
+/* La flecha (chevron) */
+.chevron-icon {
+    color: #9CA3AF; /* Gris más suave que el texto */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Efectos al pasar el cursor sobre la sección del perfil */
+.btn-profile:hover .avatar-modern {
+    border-color: #C8A45A; /* Aparece un anillo dorado alrededor de la foto */
+}
+
+.btn-profile:hover .chevron-icon {
+    color: #4B5563; /* La flecha se oscurece */
+    transform: translateY(2px); /* Pequeño salto hacia abajo para invitar al clic */
 }
 
 
@@ -379,13 +435,68 @@ select option {
 
 }
 
+/* --- NUEVAS MEJORAS DEL RESUMEN (UX/UI) --- */
 
-.actions {
-
+/* Contenedor para poner el título "Boletos" y el botón "Editar" en la misma línea */
+.section-header-flex {
     display: flex;
-    gap: 20px;
-    margin-bottom: 16px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
 
+/* Estilo específico para el botón de editar */
+.btn-editar {
+    font-size: 13px;
+    color: #C8A45A; /* Usa tu color dorado */
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.btn-editar:hover {
+    color: #A68545;
+}
+
+/* Fija el ancho de los precios para que los decimales queden perfectamente alineados */
+.precio-derecha {
+    text-align: right;
+    min-width: 75px; 
+}
+
+/* La línea sutil antes del Total */
+.divisor {
+    border: none;
+    border-top: 1px solid #E5E7EB;
+    margin: 24px 0;
+}
+
+/* Ajuste fino para el Total ahora que está abajo */
+.summary-header.total-final {
+    margin-bottom: 24px;
+    margin-top: 0;
+    align-items: center;
+}
+
+/* Nuevo contenedor para apilar el botón de pago y cancelar */
+.actions-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+/* Estilo para el botón de cancelar alejándolo visualmente del de pago */
+.btn-cancelar {
+    text-decoration: none;
+    color: #9CA3AF;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    color: #EF4444; /* Se pone rojo solo al pasar el cursor (alerta sutil) */
 }
 
 
@@ -412,53 +523,138 @@ select option {
 
 /* TICKET */
 
-.ticket-event {
+/* TICKET MODERNIZADO */
 
-    display: flex;
-    gap: 14px;
-    margin-bottom: 20px;
-
+.card.ticket-card {
+    padding: 0; /* Sobrescribe el padding general de .card para un diseño de borde a borde */
+    overflow: hidden;
+    position: relative;
 }
 
-
-.ticket-event img {
-
-    width: 80px;
-    border-radius: 4px;
-
-}
-
-
-.ticket-title {
-
-    margin-bottom: 12px;
-
-}
-
-
-.ticket-row {
-
+/* Parte superior: Evento */
+.ticket-event-info {
     display: flex;
     gap: 16px;
-    align-items: center;
-
+    padding: 24px;
 }
 
-
-.ticket-row img {
-
-    width: 55px;
-
+.ticket-poster {
+    width: 80px;
+    height: 110px; /* Altura fija para que luzca como póster de teatro */
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
 
+.ticket-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-.event-info {
+.event-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #1F2937;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
 
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     font-size: 13px;
     color: #6B7280;
-
 }
 
+/* Divisor mágico estilo "Boleto recortable" */
+.ticket-divider {
+    border-top: 2px dashed #E5E7EB;
+    margin: 0;
+    position: relative;
+}
+
+/* Círculos en los bordes para el efecto de troquelado */
+.ticket-divider::before,
+.ticket-divider::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #F5F7FA; /* Mismo color que tu fondo (body) */
+    border-radius: 50%;
+    top: -13px;
+}
+
+.ticket-divider::before {
+    left: -12px;
+}
+
+.ticket-divider::after {
+    right: -12px;
+}
+
+/* Parte inferior: Asientos */
+.ticket-section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #9CA3AF;
+    padding: 20px 24px 8px 24px;
+    margin: 0;
+}
+
+.ticket-seat-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px 24px 24px;
+}
+
+.seat-map-container {
+    background: #F9FAFB;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seat-map-container img {
+    width: 60px;
+}
+
+.seat-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.seat-type {
+    font-weight: 600;
+    color: #1F2937;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Etiqueta dorada para resaltar la cantidad de boletos */
+.badge-qty {
+    background-color: #FDF6E3; /* Fondo dorado muy suave */
+    color: #C8A45A; /* Tu dorado principal */
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.seat-zone {
+    font-size: 13px;
+    color: #6B7280;
+}
 
 
 /* DELIVERY */

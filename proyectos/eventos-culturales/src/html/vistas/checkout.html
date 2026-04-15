@@ -28,11 +28,26 @@
                 <a href="#" class="nav-item">Eventos</a>
 
                 <div class="user-menu">
-                    <div class="notification">🔔</div>
-                    <div class="user-profile">
-                        <img src="/proyectos/eventos-culturales/assets/img/avatar.png" class="avatar" alt="User Avatar">
-                        <div class="dropdown-arrow">▼</div>
-                    </div>
+
+                    <button class="btn-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="badge-dot"></span>
+                    </button>
+
+                    <button class="btn-profile">
+                        <img src="/proyectos/eventos-culturales/assets/img/avatar.png" class="avatar-modern"
+                            alt="User Avatar">
+                        <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
                 </div>
             </nav>
 
@@ -162,73 +177,40 @@
 
             <div class="card summary-card">
 
-                <div class="summary-header">
-
-                    <h3>
-                        TOTAL
-                    </h3>
-
-                    <span class="price">
-                        $ 2,654.00
-                    </span>
-
+                <div class="summary-section">
+                    <div class="section-header-flex">
+                        <h4>Boletos</h4>
+                        <a href="#" class="btn-editar">Editar</a>
+                    </div>
+                    <div class="row">
+                        <span>2 × Boleto general ($1,050.00)</span>
+                        <span class="precio-derecha">$2,100.00</span>
+                    </div>
                 </div>
 
-
                 <div class="summary-section">
-
-                    <h4>
-                        Boletos
-                    </h4>
-
+                    <h4>Cargos</h4>
                     <div class="row">
-
-                        <span>
-                            Boleto general: $ 1,050.00 ×2
-                        </span>
-
-                        <span>
-                            $ 2,100.00
-                        </span>
-
+                        <span>2 × Cargo por servicio ($252.00)</span>
+                        <span class="precio-derecha">$504.00</span>
                     </div>
-
-                </div>
-
-
-
-                <div class="summary-section">
-
-                    <h4>
-                        Cargos
-                    </h4>
-
-                    <div class="row">
-                        <span>Cargo por servicio: $ 252.00 ×2</span>
-                        <span>$504.00</span>
-                    </div>
-
                     <div class="row">
                         <span>Procesamiento de orden</span>
-                        <span>$50.00</span>
+                        <span class="precio-derecha">$50.00</span>
                     </div>
-
                 </div>
 
+                <hr class="divisor">
 
-
-                <div class="actions">
-
-                    <a href="#">Editar orden</a>
-                    <a href="#">Cancelar compra</a>
-
+                <div class="summary-header total-final">
+                    <h3>TOTAL</h3>
+                    <span class="price">$2,654.00</span>
                 </div>
 
-
-
-                <button class="btn-primary">
-                    Proceder al pago
-                </button>
+                <div class="actions-vertical">
+                    <button class="btn-primary">Proceder al pago</button>
+                    <a href="#" class="btn-cancelar">Cancelar compra</a>
+                </div>
 
             </div>
 
@@ -236,50 +218,29 @@
 
             <div class="card ticket-card">
 
-                <div class="ticket-event">
-
-                    <img src="/proyectos/eventos-culturales/assets/img/quijote.jpg">
-
-                    <div>
-
-                        <p class="event-title">
-                            Don Quijote - Ballet Nacional
-                        </p>
-
-                        <p class="event-info">
-                            Domingo, 25 de Octubre, 20:00h
-                        </p>
-
-                        <p class="event-info">
-                            Palacio de Bellas Artes, México
-                        </p>
-
+                <div class="ticket-event-info">
+                    <img src="/proyectos/eventos-culturales/assets/img/quijote.jpg" class="ticket-poster"
+                        alt="Don Quijote">
+                    <div class="ticket-details">
+                        <h3 class="event-title">Don Quijote - Ballet Nacional</h3>
+                        <div class="event-meta">
+                            <span>📅 Dom, 25 de Octubre • 20:00h</span>
+                            <span>📍 Palacio de Bellas Artes, CDMX</span>
+                        </div>
                     </div>
-
                 </div>
 
+                <div class="ticket-divider"></div>
 
-                <h4 class="ticket-title">
-                    BOLETOS
-                </h4>
-
-
-                <div class="ticket-row">
-
-                    <img src="/proyectos/eventos-culturales/assets/img/map.png">
-
-                    <div>
-
-                        <p>
-                            Boleto general x2
-                        </p>
-
-                        <span>
-                            Sector - General B
-                        </span>
-
+                <h4 class="ticket-section-title">Detalles de Boletos</h4>
+                <div class="ticket-seat-info">
+                    <div class="seat-map-container">
+                        <img src="/proyectos/eventos-culturales/assets/img/map.png" alt="Mapa del asiento">
                     </div>
-
+                    <div class="seat-details">
+                        <p class="seat-type">Boleto general <span class="badge-qty">x2</span></p>
+                        <p class="seat-zone">Sector - General B</p>
+                    </div>
                 </div>
 
             </div>
