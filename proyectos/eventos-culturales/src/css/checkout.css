@@ -22,7 +22,40 @@ body {
 
 }
 
+/* --- LOGO MODERNIZADO --- */
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+    opacity: 0.8; /* Efecto sutil al pasar el cursor */
+}
+
+/* El nuevo icono SVG */
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    color: #1E3A8A; /* Un azul zafiro muy profundo y premium */
+}
+
+/* Tipografía del logo */
+.logo-text {
+    font-size: 22px;
+    font-weight: 700; /* 'Cultura' va en negrita para dar fuerza */
+    color: #1E3A8A; /* Mismo azul oscuro */
+    letter-spacing: -0.5px; /* Junta un poco las letras para un look más de marca */
+}
+
+/* El toque especial para la palabra 'Viva' */
+.logo-accent {
+    font-weight: 300; /* 'Viva' va en una línea más delgada para crear contraste */
+    color: #C8A45A; /* Usamos tu color dorado para conectar con la identidad visual */
+}
 
 /* NAVBAR PRINCIPAL */
 .navbar {
