@@ -24,15 +24,16 @@
             </div>
 
             <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Eventos</a>
+                <a href="#" class="nav-item">Home</a>
+                <a href="#" class="nav-item">Eventos</a>
 
-                <div class="user">
-                    🔔
-                    <img src="/proyectos/eventos-culturales/assets/img/avatar.png">
-                    ⌄
+                <div class="user-menu">
+                    <div class="notification">🔔</div>
+                    <div class="user-profile">
+                        <img src="/proyectos/eventos-culturales/assets/img/avatar.png" class="avatar" alt="User Avatar">
+                        <div class="dropdown-arrow">▼</div>
+                    </div>
                 </div>
-
             </nav>
 
         </div>
@@ -81,8 +82,8 @@
 
             <div class="input-row">
 
-                <input type="text">
-                <input type="text">
+                <input type="text" placeholder="Nombre">
+                <input type="text" placeholder="Apellidos">
 
             </div>
 
@@ -92,7 +93,7 @@
                 Número de la tarjeta
             </label>
 
-            <input type="text">
+            <input type="text" placeholder="0000 0000 0000 0000">
 
 
 
@@ -100,13 +101,13 @@
 
                 <div>
                     <label>Fecha de expiración</label>
-                    <input type="text">
+                    <input type="text" placeholder="12/30">
                 </div>
 
 
                 <div>
                     <label>Código de seguridad</label>
-                    <input type="text">
+                    <input type="text" placeholder="***">
                 </div>
 
             </div>
@@ -120,30 +121,30 @@
                 </label>
             </div>
 
-
-
-            <label>País</label>
-            <input type="text">
-
+            <div>
+                <label>País</label>
+                <select id="pais-select">
+                    <option value="">Selecciona un país...</option>
+                    <option value="mexico">México</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="espana">España</option>
+                </select>
+            </div>
 
             <label>Dirección línea 1</label>
-            <input type="text">
-
+            <input type="text" placeholder="Calle y número">
 
             <label>Dirección línea 2 (Opcional)</label>
-            <input type="text">
-
+            <input type="text" placeholder="Departamento, interior, referencia (opcional)">
 
             <label>Ciudad</label>
-            <input type="text">
-
+            <input type="text" placeholder="Ingresa tu ciudad...">
 
             <label>Código postal</label>
-            <input type="text">
-
+            <input type="text" placeholder="Ej. 03100">
 
             <label>Número de teléfono</label>
-            <input type="text">
+            <input type="text" placeholder="Ej. 55-1234-5678">
 
 
 

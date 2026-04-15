@@ -24,14 +24,55 @@ body {
 
 
 
-/* NAVBAR */
-
+/* NAVBAR PRINCIPAL */
 .navbar {
-
     background: white;
-    border-bottom: 1px solid #E5E7EB;
     padding: 18px 0;
+    border-bottom: 1px solid #E5E7EB;
+}
 
+/* CONTENEDOR DE ENLACES (Flexbox) */
+.nav-links {
+    display: flex; /* ✨ Pone todo en una línea horizontal */
+    align-items: center; /* ✨ Centra todos los elementos verticalmente */
+    gap: 30px; /* ✨ Espaciado uniforme entre Home, Eventos y Menú */
+}
+
+/* ENLACES DE NAVEGACIÓN INDIVIDUALES */
+.nav-item {
+    text-decoration: none;
+    color: #4B5563;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* MENÚ DE USUARIO (Flexbox) */
+.user-menu {
+    display: flex; /* ✨ Alinea campana y perfil */
+    align-items: center; /* ✨ Centra verticalmente */
+    gap: 20px; /* ✨ Espacio entre campana y perfil */
+    margin-left: auto; /* ✨ Opcional: empuja el menú a la derecha si hay espacio */
+}
+
+/* PERFIL DE USUARIO (Flexbox) */
+.user-profile {
+    display: flex; /* ✨ Alinea avatar y flecha */
+    align-items: center; /* ✨ Centra verticalmente */
+    gap: 8px; /* ✨ Espacio entre avatar y flecha */
+}
+
+/* AVATAR */
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* FLECHA DESPLEGABLE */
+.dropdown-arrow {
+    color: #4B5563;
+    font-size: 14px;
 }
 
 
@@ -44,13 +85,38 @@ body {
 }
 
 
-.nav-links {
-
-    display: flex;
-    gap: 28px;
-    align-items: center;
-
+/* ENLACES DEL NAVBAR MODERNIZADOS */
+.nav-links a {
+    text-decoration: none;
+    color: #4B5563; /* Un gris oscuro elegante, libre del azul por defecto */
+    font-size: 14px;
+    font-weight: 500; /* Un poco de grosor extra para que se vean sólidos */
+    position: relative; /* Necesario para la magia de la línea animada */
+    transition: color 0.3s ease;
 }
+
+/* Efecto al pasar el cursor: cambia el color del texto */
+.nav-links a:hover {
+    color: #C8A45A; /* Tu color dorado */
+}
+
+/* Creamos la línea invisible debajo del texto */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Inicia con ancho cero para que no se vea */
+    height: 2px; /* Grosor de la línea */
+    bottom: -6px; /* Despegada unos píxeles del texto */
+    left: 0;
+    background-color: #C8A45A;
+    transition: width 0.3s ease; /* Anima el crecimiento de la línea */
+}
+
+/* Al pasar el cursor, la línea crece suavemente al 100% */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
 
 
 .user {
@@ -167,38 +233,42 @@ body {
 
 /* INPUTS */
 
+/* LABELS MODERNIZADOS */
 label {
-
-    font-size: 13px;
-    margin-bottom: 6px;
+  font-size: 12px;
+    font-weight: 600;
+    color: #6B7280; /* Un gris elegante */
+    margin-bottom: 8px;
     display: block;
-
+    text-transform: uppercase; /* Convertir a mayúsculas le da un toque muy premium */
+    letter-spacing: 0.5px;
 }
 
 
 /* ACTUALIZACIÓN PARA LOS SELECTS */
+/* INPUTS Y SELECTS MODERNIZADOS */
+input[type="text"],
 select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #E5E7EB;
-    border-radius: 6px;
-    margin-bottom: 16px;
+   width: 100%;
+    padding: 14px 16px; /* Más espacio interno para que respiren mejor */
+    background-color: #F9FAFB; /* Un fondo gris muuuuy sutil */
+    border: 1.5px solid #E5E7EB; /* Borde un poco más definido */
+    border-radius: 8px; /* Bordes un poco más redondeados */
+    font-size: 15px;
+    color: #1F2937;
+    outline: none; /* Quitamos el borde azul por defecto de los navegadores */
+    margin-bottom: 20px;
+    
+    /* Transición suave para todos los cambios de estado */
+    transition: all 0.3s ease;
 
     /* 1. Centramos el texto */
-    text-align: center;
+    text-align: left;
 
     /* 2. Quitamos la flecha fea por defecto del navegador */
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-
-    /* 3. Dibujamos nuestra propia flecha elegante (SVG en código) */
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-
-    /* 4. Posicionamos la flecha: alineada a la derecha y centrada verticalmente */
-    background-position: right 15px center;
-    background-size: 16px;
 
     /* 5. Agregamos espacio a la derecha para que el texto largo no pise la flecha */
     padding-right: 40px;
@@ -206,6 +276,42 @@ select {
     /* Cambiamos el cursor para que indique que es interactivo */
     cursor: pointer;
 }
+
+/* Efecto al pasar el cursor (Hover) */
+input[type="text"]:hover:not(:focus),
+select:hover:not(:focus) {
+    border-color: #D1D5DB; /* El borde se oscurece un poquito para invitar al clic */
+    background-color: #FFFFFF;
+}
+
+/* EL ESTADO ESTRELLA: FOCUS (Cuando el usuario da clic para escribir) */
+input[type="text"]:focus,
+select:focus {
+    background-color: #FFFFFF; /* El fondo se vuelve blanco puro */
+    border-color: #C8A45A; /* El borde se pinta del dorado de tu marca */
+    
+    /* Agrega un "halo" o resplandor dorado alrededor del input */
+    box-shadow: 0 0 0 4px rgba(200, 164, 90, 0.15); 
+}
+
+/* FLECHA PERSONALIZADA SOLO PARA SELECTS */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    /* El dibujo de la flecha */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    
+    /* Espacio para que el texto no pise la flecha */
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+
 
 /* Opcional: Centrar también las opciones de la lista desplegable */
 select option {
@@ -283,11 +389,23 @@ select option {
 }
 
 
+/* MODERNIZAR LOS ENLACES DE ACCIÓN (Editar orden / Cancelar) */
 .actions a {
-
-    color: #2563EB;
+    text-decoration: none;
     font-size: 13px;
+    font-weight: 500;
+    color: #6B7280; /* Gris sutil en lugar del azul fuerte */
+    transition: color 0.3s ease;
+}
 
+/* Editar orden se ilumina en dorado al pasar el cursor */
+.actions a:first-child:hover {
+    color: #C8A45A;
+}
+
+/* Cancelar compra se ilumina en un rojo suave para alertar al usuario */
+.actions a:last-child:hover {
+    color: #EF4444;
 }
 
 
