@@ -36,7 +36,6 @@ NAVBAR MODERNIZADO
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 60px;
 }
@@ -55,7 +54,7 @@ NAVBAR MODERNIZADO
 .logo-accent { font-weight: 300; color: #C8A45A; }
 
 /* Links */
-.nav-links { display: flex; gap: 30px; }
+.nav-links { display: flex; gap: 30px; margin-left: auto; margin-right: 30px; }
 .nav-links a {
     text-decoration: none;
     color: #4B5563;
