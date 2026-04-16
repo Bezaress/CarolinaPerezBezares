@@ -223,6 +223,11 @@ CARD DE BOLETOS (SIDEBAR)
     border-bottom: 1px solid #E5E7EB;
 }
 
+.ticket-item:nth-child(5) {
+    border-bottom: none;
+}
+
+
 .label {
     font-size: 11px;
     letter-spacing: 1px;
