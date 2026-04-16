@@ -65,19 +65,24 @@
             </div>
 
             <div class="map-container">
-                <p class="selected-zone">Selecciona una zona en el mapa interactivo 👇</p>
+                <p class="selected-zone">Selecciona una zona en el mapa interactivo</p>
 
                 <div class="map">
                     <svg viewBox="0 0 600 320" class="seat-map">
-                        <rect x="40" y="110" width="70" height="100" class="zone stage" data-zone="ESCENARIO" />
-                        <path d="M140 95 Q260 60 380 95 L380 215 Q260 250 140 215 Z" class="zone fan"
+
+                        <rect x="30" y="100" width="50" height="120" rx="6" class="zone stage" data-zone="ESCENARIO" />
+
+                        <path d="M110 80 Q155 65 200 80 L200 240 Q155 255 110 240 Z" class="zone fan"
                             data-zone="ZONA FAN" />
-                        <path d="M390 100 Q460 85 520 100 L520 210 Q460 225 390 210 Z" class="zone vip"
-                            data-zone="VIP" />
-                        <path d="M400 120 Q490 115 560 130 L560 200 Q490 215 400 200 Z" class="zone preferente"
+
+                        <path d="M220 65 Q270 50 320 65 L320 255 Q270 270 220 255 Z" class="zone vip" data-zone="VIP" />
+
+                        <path d="M340 50 Q390 35 440 50 L440 270 Q390 285 340 270 Z" class="zone preferente"
                             data-zone="PREFERENTE" />
-                        <path d="M410 140 Q500 140 590 155 L590 185 Q500 200 410 185 Z" class="zone general"
+
+                        <path d="M460 35 Q515 20 570 35 L570 285 Q515 300 460 285 Z" class="zone general"
                             data-zone="GENERAL" />
+
                     </svg>
                 </div>
             </div>
