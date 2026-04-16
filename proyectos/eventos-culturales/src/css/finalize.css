@@ -36,7 +36,6 @@ NAVBAR MODERNIZADO
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 60px;
 }
@@ -55,7 +54,7 @@ NAVBAR MODERNIZADO
 .logo-accent { font-weight: 300; color: #C8A45A; }
 
 /* Links */
-.nav-links { display: flex; gap: 30px; }
+.nav-links { display: flex; gap: 30px; margin-left: auto; margin-right: 30px; }
 .nav-links a {
     text-decoration: none;
     color: #4B5563;
@@ -100,11 +99,10 @@ LAYOUT PRINCIPAL
 ========================= */
 .main {
     display: grid;
-    /* minmax(0, ...) evita que el contenido largo rompa el ancho de las columnas */
-    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-    gap: 40px;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
     padding: 40px 0;
-    align-items: start; /* Evita que la tarjeta se estire verticalmente a lo loco */
+    align-items: start;
 }
 
 /* =========================
@@ -212,8 +210,9 @@ CARD DE BOLETOS (SIDEBAR)
     border-radius: 14px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
     height: fit-content;
-    position: sticky; /* Se queda fija al hacer scroll */
+    position: sticky; 
     top: 20px;
+    max-width: 450px; 
 }
 
 .ticket-card h2 { margin-bottom: 20px; font-size: 20px; }
@@ -222,6 +221,11 @@ CARD DE BOLETOS (SIDEBAR)
     padding: 16px 0;
     border-bottom: 1px solid #E5E7EB;
 }
+
+.ticket-item:nth-child(5) {
+    border-bottom: none;
+}
+
 
 .label {
     font-size: 11px;
