@@ -1,24 +1,16 @@
 /* =========================
-RESET
+RESET & BASE
 ========================= */
-
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/* =========================
-BASE
-========================= */
-
 body {
-    font-family: Inter, sans-serif;
-    background: #F3F4F6;
-    color: #111827;
+    font-family: 'Inter', sans-serif;
+    background: #F5F7FA;
+    color: #1F2937;
     line-height: 1.5;
 }
 
@@ -33,394 +25,259 @@ img {
     margin: auto;
 }
 
-
 /* =========================
-NAVBAR
+NAVBAR MODERNIZADO
 ========================= */
-
 .navbar {
     background: white;
     border-bottom: 1px solid #E5E7EB;
+    padding: 10px 0;
 }
 
 .nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 60px;
 }
 
+/* Logo */
 .logo {
-    font-weight: 600;
-    font-size: 18px;
-}
-
-nav {
-    display: flex;
-    gap: 30px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #374151;
-    font-size: 14px;
-}
-
-.user {
     display: flex;
     align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
 }
+.logo:hover { opacity: 0.8; }
+.logo-icon { width: 28px; height: 28px; color: #1E3A8A; }
+.logo-text { font-size: 22px; font-weight: 700; color: #1E3A8A; letter-spacing: -0.5px; }
+.logo-accent { font-weight: 300; color: #C8A45A; }
 
-.avatar {
-    width: 35px;
-    height: 35px;
+/* Links */
+.nav-links { display: flex; gap: 30px; }
+.nav-links a {
+    text-decoration: none;
+    color: #4B5563;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: #C8A45A; }
+
+/* User Menu */
+.user-menu { display: flex; align-items: center; gap: 20px; }
+.btn-icon, .btn-profile {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: #4B5563;
+    transition: color 0.3s ease;
+}
+.btn-icon { position: relative; padding: 4px; }
+.btn-icon:hover { color: #C8A45A; }
+.badge-dot {
+    position: absolute; top: 2px; right: 4px;
+    width: 8px; height: 8px;
+    background-color: #EF4444;
     border-radius: 50%;
-    background: #E5E7EB;
+    border: 2px solid #FFFFFF;
 }
-
+.btn-profile { gap: 10px; }
+.avatar-modern {
+    width: 36px; height: 36px; border-radius: 50%;
+    object-fit: cover; border: 2px solid transparent;
+    padding: 2px; transition: all 0.3s ease;
+}
+.chevron-icon { color: #9CA3AF; transition: transform 0.3s ease; }
+.btn-profile:hover .avatar-modern { border-color: #C8A45A; }
+.btn-profile:hover .chevron-icon { transform: translateY(2px); color: #4B5563; }
 
 /* =========================
 LAYOUT PRINCIPAL
 ========================= */
-
 .main {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    /* minmax(0, ...) evita que el contenido largo rompa el ancho de las columnas */
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
     gap: 40px;
-    padding: 60px 0;
+    padding: 40px 0;
+    align-items: start; /* Evita que la tarjeta se estire verticalmente a lo loco */
 }
 
-
 /* =========================
-EVENTO
+EVENTO INFO
 ========================= */
-
 .event-info h1 {
     font-size: 28px;
     margin-bottom: 10px;
+    color: #111827;
 }
 
-.date,
-.location {
+.date, .location {
     color: #6B7280;
+    font-size: 15px;
+    margin-bottom: 6px;
 }
 
-.location {
-    margin-bottom: 30px;
+.location { margin-bottom: 30px; }
+
+.selected-zone {
+    margin-top: 40px; /* Lo separa de la info del evento */
+    margin-bottom: 12px; /* Lo pega más al mapa */
+    font-weight: 600;
+    font-size: 16px;
+    color: #C8A45A;
+    text-align: center; /* Centramos el texto respecto al mapa */
 }
 
-
-/* MAPA */
+/* =========================
+MAPA INTERACTIVO
+========================= */
+.map-container {
+    width: 100%;
+    max-width: 100%;
+}
 
 .map {
-    border-radius: 12px;
-    overflow: hidden;
-    background: #F9FAFB;
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-}
-
-.map img {
-    max-height: 420px;
-    object-fit: contain;
-}
-
-
-/* MAPA INTERACTIVO */
-
-.map {
-    background: #F9FAFB;
+    background: #FFFFFF;
     border-radius: 12px;
     padding: 20px;
     border: 1px solid #E5E7EB;
-}
-
-.seat-map {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
     width: 100%;
-    height: auto;
+    overflow: hidden; /* Clave: recorta cualquier cosa que intente salirse */
 }
 
-
-/* mapa */
-
-.seat-map {
-
-    width: 100%;
-    height: auto;
-    display: block;
-
+.seat-map { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    max-width: 100%; /* Evita que el SVG desborde */
 }
-
-/* zonas */
-
+/* Zonas Generales */
 .zone {
-
+    fill: #D1D5DB; /* Color por defecto si no tienen clase específica */
     stroke: #ffffff;
     stroke-width: 2;
-
-    transition: .2s;
-
     cursor: pointer;
-
+    transition: all 0.25s ease;
 }
 
-/* colores */
+/* Colores de Zonas */
+.fan { fill: #D97706; }
+.vip { fill: #7C3AED; }
+.preferente { fill: #2563EB; }
+.general { fill: #059669; }
+.stage { fill: #9CA3AF; cursor: default; }
 
-.fan {
-
-    fill: #D97706;
-
-}
-
-.vip {
-
-    fill: #7C3AED;
-
-}
-
-.preferente {
-
-    fill: #2563EB;
-
-}
-
-.general {
-
-    fill: #059669;
-
-}
-
-/* hover */
-
-.zone:hover {
-
-    opacity: .85;
+/* Interacciones Hover/Active */
+.zone:not(.stage):hover {
+    opacity: 0.85;
     transform: scale(1.01);
-
+    stroke: #C8A45A;
+    stroke-width: 2;
 }
-
-/* activa */
 
 .zone.active {
-
     stroke: #111827;
     stroke-width: 3;
-
 }
 
-/* escenario */
-
-.stage {
-
-    fill: #9CA3AF;
-    cursor: default;
-
-}
-
-/* zonas */
-
-.zone {
-    fill: #D1D5DB;
-    cursor: pointer;
-    transition: .25s;
-}
-
-/* hover UX */
-
-.zone:hover {
-    fill: #C49A57;
-    transform: scale(1.02);
-    transform-origin: center;
-}
-
-/* zona seleccionada */
-
-.zone.active {
-    fill: #C49A57;
-}
-
-.selected-zone {
-    margin-bottom: 20px;
-    font-weight: 500;
-    color: #6B7280;
-}
-
-.stage {
-
-    fill: #9CA3AF;
-    cursor: default;
-
-}
-
-
-/* =========================
-COLORES ZONAS
-========================= */
-
+/* Leyenda */
 .legend {
-
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-
-    margin-top: 20px;
-
-    font-size: 14px;
-
+    gap: 20px;
+    margin-top: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4B5563;
 }
-
-.legend div {
-
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-}
-
-.color {
-
-    width: 14px;
-    height: 14px;
-
-    border-radius: 3px;
-
-}
-
-.color.fan {
-
-    background: #D97706;
-
-}
-
-.color.vip {
-
-    background: #7C3AED;
-
-}
-
-.color.preferente {
-
-    background: #2563EB;
-
-}
-
-.color.general {
-
-    background: #059669;
-
-}
-
-
-/* animación total */
-
-.total {
-
-    display: flex;
-    justify-content: space-between;
-
-    margin-top: 20px;
-    padding-top: 15px;
-
-    border-top: 1px solid #E5E7EB;
-
-    font-weight: 600;
-    font-size: 18px;
-
-    transition: .25s;
-
-}
-
-.total.updated {
-
-    transform: scale(1.05);
-
-    color: #C49A57;
-
-}
-
-/* escenario */
-
-.stage {
-    fill: #9CA3AF;
-    cursor: default;
-}
-
-.stage:hover {
-    fill: #9CA3AF;
-}
+.legend div { display: flex; align-items: center; gap: 8px; }
+.color { width: 14px; height: 14px; border-radius: 4px; }
+.color.fan { background: #D97706; }
+.color.vip { background: #7C3AED; }
+.color.preferente { background: #2563EB; }
+.color.general { background: #059669; }
 
 /* =========================
-CARD BOLETOS
+CARD DE BOLETOS (SIDEBAR)
 ========================= */
-
 .ticket-card {
     background: white;
     padding: 30px;
     border-radius: 14px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
     height: fit-content;
+    position: sticky; /* Se queda fija al hacer scroll */
+    top: 20px;
 }
 
-.ticket-card h2 {
-    margin-bottom: 20px;
-}
-
-
-/* ITEM */
+.ticket-card h2 { margin-bottom: 20px; font-size: 20px; }
 
 .ticket-item {
-    padding: 20px 0;
+    padding: 16px 0;
     border-bottom: 1px solid #E5E7EB;
-}
-
-.ticket-item:last-child {
-    border-bottom: none;
 }
 
 .label {
     font-size: 11px;
     letter-spacing: 1px;
     color: #9CA3AF;
+    text-transform: uppercase;
 }
 
 .section-name {
+    display: block;
     font-weight: 600;
-    margin: 5px 0 10px;
+    margin: 4px 0 10px;
+    color: #1F2937;
 }
-
-
-/* PRECIO + CONTADOR */
 
 .price-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
 }
 
-.price-row span {
+.price-row > span {
     font-weight: 500;
+    color: #6B7280;
 }
 
-
-/* CONTADOR */
-
+/* Contadores Mejorados */
 .counter {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #F9FAFB;
-    padding: 6px 12px;
-    border-radius: 8px;
+    background: #F3F4F6;
+    padding: 4px 8px;
+    border-radius: 20px; /* Diseño en forma de píldora */
+    border: 1px solid #E5E7EB;
 }
 
 .counter button {
     border: none;
-    background: none;
-    font-size: 18px;
+    background: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 16px;
     cursor: pointer;
     color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+}
+
+.counter button:hover {
+    color: #C8A45A;
+    border-color: #C8A45A;
 }
 
 .counter span {
@@ -429,54 +286,53 @@ CARD BOLETOS
     text-align: center;
 }
 
-
-/* BOTON */
-
-.buy-btn {
-    margin-top: 25px;
-    width: 100%;
-    padding: 14px;
-    background: #C49A57;
-    border: none;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 15px;
+/* Total */
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 2px dashed #E5E7EB;
+    font-weight: 700;
+    font-size: 20px;
+    color: #111827;
     transition: .25s;
 }
 
-.buy-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+.total.updated {
+    transform: scale(1.02);
+    color: #C8A45A;
 }
 
-
-/* TOTAL FINAL */
-.total {
-
-    display: flex;
-    justify-content: space-between;
-
-    margin-top: 20px;
-    padding-top: 15px;
-
-    border-top: 1px solid #E5E7EB;
-
+/* Botón Comprar */
+.buy-btn {
+    margin-top: 24px;
+    width: 100%;
+    padding: 16px;
+    background: #C8A45A;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
     font-weight: 600;
-    font-size: 18px;
-
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
+.buy-btn:hover {
+    background: #B8954E;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(200, 164, 90, 0.25);
+}
 
 /* =========================
 FOOTER
 ========================= */
-
 .footer {
-    background: #0F172A;
+    background: #0B1A33; /* El mismo azul oscuro premium del otro archivo */
     color: white;
     padding: 70px 0 40px;
+    margin-top: 40px;
 }
 
 .footer-grid {
@@ -485,105 +341,86 @@ FOOTER
     gap: 40px;
 }
 
-.footer h3 {
-    margin-bottom: 10px;
-}
+.footer h3, .footer h4 { margin-bottom: 15px; }
 
-.footer h4 {
-    margin-bottom: 12px;
+.footer ul { list-style: none; }
+.footer li, .footer p {
+    margin-bottom: 8px;
+    color: #9CA3AF;
     font-size: 14px;
+    cursor: pointer;
 }
-
-.footer ul {
-    list-style: none;
-}
-
-.footer li {
-    margin-bottom: 6px;
-    color: #CBD5E1;
-    font-size: 14px;
-}
-
-.footer p {
-    color: #CBD5E1;
-    font-size: 14px;
-}
+.footer li:hover { color: white; }
 
 .copyright {
     text-align: center;
     margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
     font-size: 13px;
-    color: #94A3B8;
+    color: #9CA3AF;
 }
-
 
 /* =========================
-RESPONSIVE
+RESPONSIVE (TABLETS Y MOVILES)
 ========================= */
 
-
-/* TABLET */
-
-@media (max-width: 900px) {
-
-    .main {
-        grid-template-columns: 1fr;
-        gap: 35px;
+/* Laptops pequeñas y Tablets (Pasa a 1 sola columna) */
+@media (max-width: 992px) {
+    .main { 
+        grid-template-columns: 1fr; /* El mapa y la tarjeta se apilan verticalmente */
+        gap: 30px; 
     }
-
-    .map img {
-        height: 240px;
+    
+    .ticket-card { 
+        position: static; /* Quita el efecto pegajoso en móviles */
+        width: 100%;
     }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
+    
+    .footer-grid { 
+        grid-template-columns: repeat(2, 1fr); 
     }
-
 }
 
-
-/* MOVIL */
-
+/* Teléfonos Móviles */
 @media (max-width: 600px) {
-
-    .nav-content {
-        flex-direction: column;
-        height: auto;
-        padding: 15px 0;
-        gap: 10px;
+    /* Ajuste del Navbar para móvil */
+    .nav-content { 
+        flex-direction: column; 
+        height: auto; 
+        padding: 15px 0; 
+        gap: 15px; 
     }
-
-    nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    
+    .nav-links { 
+        width: 100%; 
+        justify-content: center; 
+        gap: 20px;
     }
-
-    .main {
-        padding: 40px 0;
+    
+    /* Ajuste de textos */
+    .event-info h1 { 
+        font-size: 22px; 
     }
-
-    .event-info h1 {
-        font-size: 22px;
+    
+    /* Maximizamos el espacio del mapa en pantallas chicas */
+    .map { 
+        padding: 10px; 
     }
-
-    .map img {
-        height: 200px;
+    
+    .ticket-card { 
+        padding: 20px; 
     }
-
-    .ticket-card {
-        padding: 20px;
-    }
-
+    
+    /* Evita que los precios y botones se aplasten */
     .price-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
+        flex-wrap: wrap; /* Permite que el contador baje si no cabe */
+        gap: 12px;
     }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
+    
+    /* Centrar Footer */
+    .footer-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center; 
     }
-
 }

@@ -4,305 +4,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compra de boletos</title>
+    <title>Compra de boletos | Cultura Viva</title>
 
-    <link rel="stylesheet" href="/proyectos/eventos-culturales/src/css/finalize.css">
+    <link rel="stylesheet" href="../../css/finalize.css">
 
-    <rect class="zone" data-zone="VIP" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <header class="navbar">
         <div class="container nav-content">
-            <div class="logo">Cultura Viva</div>
+            <a href="#" class="logo">
+                <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                    <path d="M8 9.5A1.5 1.5 0 0 0 9.5 8 1.5 1.5 0 0 0 8 6.5 1.5 1.5 0 0 0 6.5 8 1.5 1.5 0 0 0 8 9.5z">
+                    </path>
+                    <path
+                        d="M16 9.5A1.5 1.5 0 0 0 17.5 8 1.5 1.5 0 0 0 16 6.5 1.5 1.5 0 0 0 14.5 8 1.5 1.5 0 0 0 16 9.5z">
+                    </path>
+                    <path d="M15 14c-1.33 2-4.67 2-6 0"></path>
+                </svg>
+                <div class="logo-text">Cultura<span class="logo-accent">Viva</span></div>
+            </a>
 
-            <nav>
+            <nav class="nav-links">
                 <a href="#">Home</a>
                 <a href="#">Eventos</a>
             </nav>
 
-            <div class="user">
-                <div class="avatar"></div>
+            <div class="user-menu">
+                <button class="btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                    <span class="badge-dot"></span>
+                </button>
+                <button class="btn-profile">
+                    <img src="../../../assets/img/avatar.png" class="avatar-modern" alt="User Avatar">
+                    <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
 
+    <main class="main container">
 
-    <!-- CONTENIDO -->
-    <section class="main container">
-
-        <div class="event-info">
-
-            <h1>Don Quijote - Ballet Nacional</h1>
-
-            <p class="date">Octubre 25 - 20:00 h</p>
-
-            <p class="location">
-                Palacio de Bellas Artes - Ciudad de México
-            </p>
-
-            <p class="selected-zone">
-                Selecciona una zona en el mapa
-            </p>
-
-        </div class="map-container">
-
-        <div class="map">
-            <svg viewBox="0 0 600 320" class="seat-map">
-
-                <!-- ESCENARIO -->
-                <rect x="40" y="110" width="70" height="100" class="zone stage" data-zone="ESCENARIO" />
-
-                <!-- ZONA FAN -->
-                <path d="
-M140 95
-Q260 60 380 95
-L380 215
-Q260 250 140 215
-Z" class="zone fan" data-zone="ZONA FAN" />
-
-                <!-- VIP -->
-                <path d="
-M390 100
-Q460 85 520 100
-L520 210
-Q460 225 390 210
-Z" class="zone vip" data-zone="VIP" />
-
-                <!-- PREFERENTE -->
-                <path d="
-M400 120
-Q490 115 560 130
-L560 200
-Q490 215 400 200
-Z" class="zone preferente" data-zone="PREFERENTE" />
-
-                <!-- GENERAL -->
-                <path d="
-M410 140
-Q500 140 590 155
-L590 185
-Q500 200 410 185
-Z" class="zone general" data-zone="GENERAL" />
-
-            </svg>
-
-        </div>
-
-        </div>
-
-        <div class="legend">
-
-            <div>
-                <span class="color fan"></span>
-                ZONA FAN
+        <div class="event-column">
+            <div class="event-info">
+                <h1>Don Quijote - Ballet Nacional</h1>
+                <p class="date">📅 Octubre 25 - 20:00 h</p>
+                <p class="location">📍 Palacio de Bellas Artes - Ciudad de México</p>
             </div>
 
-            <div>
-                <span class="color vip"></span>
-                VIP
+            <div class="map-container">
+                <p class="selected-zone">Selecciona una zona en el mapa interactivo 👇</p>
+
+                <div class="map">
+                    <svg viewBox="0 0 600 320" class="seat-map">
+                        <rect x="40" y="110" width="70" height="100" class="zone stage" data-zone="ESCENARIO" />
+                        <path d="M140 95 Q260 60 380 95 L380 215 Q260 250 140 215 Z" class="zone fan"
+                            data-zone="ZONA FAN" />
+                        <path d="M390 100 Q460 85 520 100 L520 210 Q460 225 390 210 Z" class="zone vip"
+                            data-zone="VIP" />
+                        <path d="M400 120 Q490 115 560 130 L560 200 Q490 215 400 200 Z" class="zone preferente"
+                            data-zone="PREFERENTE" />
+                        <path d="M410 140 Q500 140 590 155 L590 185 Q500 200 410 185 Z" class="zone general"
+                            data-zone="GENERAL" />
+                    </svg>
+                </div>
             </div>
 
-            <div>
-                <span class="color preferente"></span>
-                PREFERENTE
+            <div class="legend">
+                <div><span class="color fan"></span>ZONA FAN</div>
+                <div><span class="color vip"></span>VIP</div>
+                <div><span class="color preferente"></span>PREFERENTE</div>
+                <div><span class="color general"></span>GENERAL</div>
             </div>
-
-            <div>
-                <span class="color general"></span>
-                GENERAL
-            </div>
-
         </div>
 
-
-
-        </div>
-
-
-        <!-- TARJETA -->
         <aside class="ticket-card">
-
             <h2>Tu selección</h2>
 
             <div class="ticket-item">
-
                 <p class="label">SECCIÓN</p>
-
                 <span class="section-name">GENERAL</span>
-
                 <div class="price-row">
-                    <span>$ 1,302.00 cada uno</span>
-
+                    <span>$ 1,302.00</span>
                     <div class="counter">
                         <button>-</button>
                         <span>0</span>
                         <button>+</button>
                     </div>
                 </div>
-
             </div>
 
-
             <div class="ticket-item">
-
                 <p class="label">SECCIÓN</p>
-
                 <span class="section-name">PREFERENTE</span>
-
                 <div class="price-row">
-                    <span>$ 2,258.00 cada uno</span>
-
+                    <span>$ 2,258.00</span>
                     <div class="counter">
                         <button>-</button>
                         <span>0</span>
                         <button>+</button>
                     </div>
                 </div>
-
             </div>
 
-
             <div class="ticket-item">
-
                 <p class="label">SECCIÓN</p>
-
                 <span class="section-name">VIP</span>
-
                 <div class="price-row">
-                    <span>$ 3,002.00 cada uno</span>
-
+                    <span>$ 3,002.00</span>
                     <div class="counter">
                         <button>-</button>
                         <span>0</span>
                         <button>+</button>
                     </div>
                 </div>
-
             </div>
-
 
             <div class="ticket-item">
-
                 <p class="label">SECCIÓN</p>
-
                 <span class="section-name">ZONA FAN</span>
-
                 <div class="price-row">
-                    <span>$ 3,746.00 cada uno</span>
-
+                    <span>$ 3,746.00</span>
                     <div class="counter">
                         <button>-</button>
                         <span>0</span>
                         <button>+</button>
                     </div>
                 </div>
-
-            </div>
-
-
-            <div class="total">
-                Total: <span id="total-price">$0</span>
             </div>
 
             <div class="summary">
-
-                <h3>Resumen</h3>
-
-                <ul id="summary-list">
-                </ul>
-
+                <ul id="summary-list"></ul>
             </div>
 
-            <button class="buy-btn">
-                Comprar boletos
-            </button>
+            <div class="total">
+                <span>Total:</span> <span id="total-price">$0.00</span>
+            </div>
 
+            <button class="buy-btn">Proceder al pago</button>
         </aside>
 
-    </section>
+    </main>
 
-
-    <!-- FOOTER -->
     <footer class="footer">
-
         <div class="container footer-grid">
-
             <div>
                 <h3>Cultura Viva</h3>
-
-                <p>
-                    Plataforma digital para descubrir eventos culturales,
-                    arte y experiencias en tu ciudad.
-                </p>
-
+                <p>Plataforma digital para descubrir eventos culturales, arte y experiencias en tu ciudad.</p>
             </div>
-
-
             <div>
-
                 <h4>Explorar</h4>
-
                 <ul>
-
                     <li>Inicio</li>
-
                     <li>Eventos</li>
-
                     <li>Categorías</li>
-
                     <li>Próximos eventos</li>
-
-                    <li>Destacados</li>
-
                 </ul>
-
             </div>
-
-
             <div>
-
                 <h4>Información</h4>
-
                 <ul>
-
                     <li>Sobre nosotros</li>
-
                     <li>Contacto</li>
-
-                    <li>Colaboradores</li>
-
                     <li>Preguntas frecuentes</li>
-
                 </ul>
-
             </div>
-
-
             <div>
-
                 <h4>Contacto</h4>
-
                 <p>info@culturaviva.com</p>
-
-                <p>#55 123 45 67</p>
-
+                <p>+55 123 45 67</p>
             </div>
-
-
         </div>
-
-
         <div class="copyright">
-            2026 Cultura Viva. Todos los derechos reservados
+            © 2026 Cultura Viva. Todos los derechos reservados.
         </div>
-
     </footer>
-
-    <script src="/proyectos/eventos-culturales/src/js/finalize.js"></script>
+    <script src="../../js/finalize.js"></script>
 
 </body>
 
