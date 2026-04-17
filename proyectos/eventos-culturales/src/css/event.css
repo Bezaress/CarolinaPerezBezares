@@ -32,65 +32,153 @@ body {
 /* NAVBAR */
 
 .navbar {
-
     background: white;
     border-bottom: 1px solid #E5E7EB;
-    padding: 18px 0;
-
+    padding: 12px 0; /* Un poco más angosto para imitar la imagen */
 }
 
-
 .nav-content {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
-
+/* LOGO ESTILOS */
 .logo {
-
-    font-weight: 600;
-    font-size: 18px;
-
-}
-
-
-.nav-links {
-
     display: flex;
-    gap: 28px;
     align-items: center;
-
+    gap: 8px;
+    font-size: 24px;
+    letter-spacing: -0.5px;
 }
 
+.logo-cultura {
+    font-weight: 700;
+    color: #2B3A67; /* Azul oscuro de la imagen */
+}
+
+.logo-viva {
+    font-weight: 400;
+    color: #C8A45A; /* Reutilizando tu color principal dorado */
+}
+
+/* ENLACES Y ACCIONES */
+.nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
 
 .nav-links a {
-
     text-decoration: none;
-    color: #374151;
-    font-size: 14px;
-
+    color: #4B5563;
+    font-size: 16px;
+    font-weight: 600;
+    /* Agregamos una transición suave para el color */
+    transition: color 0.3s ease;
 }
 
+/* Efecto hover usando tu color dorado */
+.nav-links a:hover {
+    color: #C8A45A;
+}
 
-.user {
-
+.nav-actions {
     display: flex;
-    gap: 12px;
     align-items: center;
-    font-size: 14px;
+    gap: 24px;
+    margin-left: 16px;
+}
 
+/* CAMPANITA DE NOTIFICACIONES */
+.btn-notification {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.btn-notification:hover {
+    transform: scale(1.05); /* Mantiene el pequeño efecto de acercamiento */
+}
+
+/* Agregamos la transición de color al icono SVG de la campana */
+.btn-notification svg {
+    transition: stroke 0.3s ease;
+}
+
+/* El contorno de la campana se vuelve dorado al pasar el cursor */
+.btn-notification:hover svg {
+    stroke: #C8A45A;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #EF4444; 
+    border-radius: 50%;
+    border: 2px solid white; 
+}
+
+/* --- ENLACES --- */
+
+.nav-links a {
+    text-decoration: none;
+    color: #4B5563;
+    font-size: 16px;
+    font-weight: 600;
+    /* Agregamos una transición suave para el color */
+    transition: color 0.3s ease;
+}
+
+/* Efecto hover usando tu color dorado */
+.nav-links a:hover {
+    color: #C8A45A;
 }
 
 
-.user img {
+/* PERFIL DE USUARIO */
+.user-profile {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-    width: 34px;
-    height: 34px;
+.user-profile:hover {
+    transform: translateY(-2px);
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    object-fit: cover;
+    margin: 2px;
+    /* Empezamos sin sombra, pero preparamos la transición */
+    box-shadow: 0 0 0 0px transparent;
+    transition: box-shadow 0.3s ease; 
+}
 
+/* Aquí está la magia: el aro dorado SOLO aparece al pasar el cursor */
+.user-profile:hover img {
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #C8A45A;
+}
+
+.user-profile svg {
+    transition: stroke 0.3s ease;
+}
+
+.user-profile:hover svg {
+    stroke: #C8A45A;
 }
 
 
