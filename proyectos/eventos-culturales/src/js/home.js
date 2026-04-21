@@ -1,35 +1,33 @@
-/*<script>
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // ... (aquí va tu código del slider del hero) ...
 
-    document.addEventListener("DOMContentLoaded", ()=>{
+    const btnFecha = document.getElementById("btn-fecha");
+    const dateText = document.getElementById("date-text");
 
-        let slides = document.querySelectorAll(".hero-slide");
-        let dots = document.querySelectorAll(".dot");
-
-        let index = 0;
-
-        function showSlide(i){
-
-            slides.forEach(slide => slide.classList.remove("active"));
-            dots.forEach(dot => dot.classList.remove("active"));
-            slides.forEach(slide => slide.style.display = "none");
-
-            slides[i].style.display = "block";
-            slides[i].classList.add("active");
-            dots[i].classList.add("active");
-        }
-
-        setInterval(()=>{
-
-            index++;
-
-            if(index >= slides.length){
-            index = 0;
+    if (btnFecha) {
+        flatpickr(btnFecha, {
+            locale: "es",
+            dateFormat: "d M, Y", // Formato visual, ej: "17 Abr, 2026"
+            // Se ejecuta cada vez que el usuario selecciona una fecha
+            onChange: function(selectedDates, dateStr, instance) {
+                if(dateStr) {
+                    dateText.textContent = dateStr; // Cambia "Todas las fechas" por la fecha
+                }
+            },
+            // Se ejecuta si el usuario borra la fecha
+            onReady: function(selectedDates, dateStr, instance) {
+                // Agregamos un botón de "Limpiar" al calendario (opcional pero muy útil)
+                const clearBtn = document.createElement("div");
+                clearBtn.className = "flatpickr-clear-btn";
+                clearBtn.textContent = "Limpiar selección";
+                clearBtn.addEventListener("click", () => {
+                    instance.clear();
+                    dateText.textContent = "Todas las fechas";
+                    instance.close();
+                });
+                instance.calendarContainer.appendChild(clearBtn);
             }
-
-            showSlide(index);
-
-        },5000);
-
+        });
+    }
 });
-
-</script>*/
