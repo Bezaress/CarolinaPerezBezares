@@ -17,24 +17,19 @@ body {
 
 
 
-/* CONTAINER */
-
+/* --- CONTENEDOR GENERAL --- */
+/* Nota: Si tus otras páginas ya tienen esta clase .container, no necesitas duplicarla */
 .container {
-
     width: 90%;
     max-width: 1150px;
     margin: auto;
-
 }
 
-
-
-/* NAVBAR */
-
+/* --- NAVBAR PRINCIPAL --- */
 .navbar {
     background: white;
+    padding: 18px 0;
     border-bottom: 1px solid #E5E7EB;
-    padding: 12px 0; /* Un poco más angosto para imitar la imagen */
 }
 
 .nav-content {
@@ -43,142 +38,139 @@ body {
     align-items: center;
 }
 
-/* LOGO ESTILOS */
+/* --- LOGO MODERNIZADO --- */
 .logo {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 24px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    color: #1E3A8A;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1E3A8A;
     letter-spacing: -0.5px;
 }
 
-.logo-cultura {
-    font-weight: 700;
-    color: #2B3A67; /* Azul oscuro de la imagen */
+.logo-accent {
+    font-weight: 300;
+    color: #C8A45A;
 }
 
-.logo-viva {
-    font-weight: 400;
-    color: #C8A45A; /* Reutilizando tu color principal dorado */
-}
-
-/* ENLACES Y ACCIONES */
+/* --- ENLACES DE NAVEGACIÓN --- */
 .nav-links {
     display: flex;
-    gap: 32px;
     align-items: center;
+    gap: 30px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #4B5563;
-    font-size: 16px;
-    font-weight: 600;
-    /* Agregamos una transición suave para el color */
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
     transition: color 0.3s ease;
 }
 
-/* Efecto hover usando tu color dorado */
 .nav-links a:hover {
     color: #C8A45A;
 }
 
-.nav-actions {
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #C8A45A;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- MENÚ DE USUARIO MODERNIZADO --- */
+.user-menu {
     display: flex;
     align-items: center;
     gap: 24px;
-    margin-left: 16px;
+    margin-left: auto;
 }
 
-/* CAMPANITA DE NOTIFICACIONES */
-.btn-notification {
-    background: none;
+.btn-icon, .btn-profile {
+    background: transparent;
     border: none;
-    padding: 0;
     cursor: pointer;
-    position: relative;
+    padding: 0;
     display: flex;
     align-items: center;
-    transition: transform 0.2s ease;
-}
-
-.btn-notification:hover {
-    transform: scale(1.05); /* Mantiene el pequeño efecto de acercamiento */
-}
-
-/* Agregamos la transición de color al icono SVG de la campana */
-.btn-notification svg {
-    transition: stroke 0.3s ease;
-}
-
-/* El contorno de la campana se vuelve dorado al pasar el cursor */
-.btn-notification:hover svg {
-    stroke: #C8A45A;
-}
-
-.notification-dot {
-    position: absolute;
-    top: 0;
-    right: 2px;
-    width: 8px;
-    height: 8px;
-    background-color: #EF4444; 
-    border-radius: 50%;
-    border: 2px solid white; 
-}
-
-/* --- ENLACES --- */
-
-.nav-links a {
-    text-decoration: none;
     color: #4B5563;
-    font-size: 16px;
-    font-weight: 600;
-    /* Agregamos una transición suave para el color */
     transition: color 0.3s ease;
 }
 
-/* Efecto hover usando tu color dorado */
-.nav-links a:hover {
+/* Campana de Notificaciones */
+.btn-icon {
+    position: relative;
+    padding: 4px;
+}
+
+.btn-icon:hover {
     color: #C8A45A;
 }
 
+.badge-dot {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: #EF4444;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+}
 
-/* PERFIL DE USUARIO */
-.user-profile {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    cursor: pointer;
+/* Perfil y Avatar */
+.btn-profile {
+    gap: 10px;
+}
+
+.avatar-modern {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    padding: 2px;
     transition: all 0.3s ease;
 }
 
-.user-profile:hover {
-    transform: translateY(-2px);
+.chevron-icon {
+    color: #9CA3AF;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.user-profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 2px;
-    /* Empezamos sin sombra, pero preparamos la transición */
-    box-shadow: 0 0 0 0px transparent;
-    transition: box-shadow 0.3s ease; 
+.btn-profile:hover .avatar-modern {
+    border-color: #C8A45A;
 }
 
-/* Aquí está la magia: el aro dorado SOLO aparece al pasar el cursor */
-.user-profile:hover img {
-    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #C8A45A;
-}
-
-.user-profile svg {
-    transition: stroke 0.3s ease;
-}
-
-.user-profile:hover svg {
-    stroke: #C8A45A;
+.btn-profile:hover .chevron-icon {
+    color: #4B5563;
+    transform: translateY(2px);
 }
 
 
