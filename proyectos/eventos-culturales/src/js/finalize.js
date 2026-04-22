@@ -32,13 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Creamos el elemento de la lista para el resumen
                 const li = document.createElement("li");
                 // Usamos toLocaleString para formatear con comas los miles
-                li.innerHTML = `${zone} x${quantity} <span>$${subtotal.toLocaleString('es-MX', {minimumFractionDigits: 2})}</span>`;
+                li.innerHTML = `${zone} x${quantity} <span>$${subtotal.toLocaleString('es-MX', { minimumFractionDigits: 2 })}</span>`;
                 summaryList.appendChild(li);
             }
         });
 
         // Actualizamos el precio total grande
-        totalPrice.textContent = "$" + total.toLocaleString('es-MX', {minimumFractionDigits: 2});
+        totalPrice.textContent = "$" + total.toLocaleString('es-MX', { minimumFractionDigits: 2 });
 
         // Animación del total (efecto de latido)
         totalBox.classList.add("updated");
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 5. LÓGICA DEL MAPA INTERACTIVO (Click en las zonas)
     zones.forEach(zone => {
         zone.addEventListener("click", () => {
-            
+
             // Si hacen clic en el escenario, no hacemos nada
             if (zone.classList.contains("stage")) return;
 
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     // -- MEJORA DE UX: Iluminamos la tarjeta temporalmente --
                     card.style.transition = "background-color 0.3s ease";
                     card.style.backgroundColor = "#FDF6E3"; // Fondo dorado muy suave
-                    
+
                     setTimeout(() => {
                         card.style.backgroundColor = "transparent";
                     }, 600);

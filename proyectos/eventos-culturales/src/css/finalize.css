@@ -21,23 +21,23 @@ img {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: auto;
 }
 
 /* =========================
-NAVBAR MODERNIZADO
+NAVBAR MODERNIZADO (Corregido)
 ========================= */
 .navbar {
     background: white;
+    padding: 18px 0; /* Volvemos al espacio original del checkout */
     border-bottom: 1px solid #E5E7EB;
-    padding: 10px 0;
 }
 
 .nav-content {
     display: flex;
+    justify-content: space-between; /* Esto separa el logo de los enlaces */
     align-items: center;
-    height: 60px;
 }
 
 /* Logo */
@@ -54,27 +54,56 @@ NAVBAR MODERNIZADO
 .logo-accent { font-weight: 300; color: #C8A45A; }
 
 /* Links */
-.nav-links { display: flex; gap: 30px; margin-left: auto; margin-right: 30px; }
+.nav-links { 
+    display: flex; 
+    align-items: center; /* Centramos verticalmente */
+    gap: 30px; 
+}
+
 .nav-links a {
     text-decoration: none;
     color: #4B5563;
     font-size: 14px;
     font-weight: 500;
-    transition: color 0.3s;
+    position: relative; /* Necesario para la línea animada */
+    transition: color 0.3s ease;
 }
+
 .nav-links a:hover { color: #C8A45A; }
 
+/* Línea dorada animada de los enlaces */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background-color: #C8A45A;
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+
 /* User Menu */
-.user-menu { display: flex; align-items: center; gap: 20px; }
+.user-menu { 
+    display: flex; 
+    align-items: center; 
+    gap: 24px; 
+    margin-left: auto;
+}
+
 .btn-icon, .btn-profile {
     background: transparent;
     border: none;
     cursor: pointer;
+    padding: 0;
     display: flex;
     align-items: center;
     color: #4B5563;
     transition: color 0.3s ease;
 }
+
+/* Campana */
 .btn-icon { position: relative; padding: 4px; }
 .btn-icon:hover { color: #C8A45A; }
 .badge-dot {
@@ -84,6 +113,8 @@ NAVBAR MODERNIZADO
     border-radius: 50%;
     border: 2px solid #FFFFFF;
 }
+
+/* Avatar */
 .btn-profile { gap: 10px; }
 .avatar-modern {
     width: 36px; height: 36px; border-radius: 50%;
@@ -93,7 +124,6 @@ NAVBAR MODERNIZADO
 .chevron-icon { color: #9CA3AF; transition: transform 0.3s ease; }
 .btn-profile:hover .avatar-modern { border-color: #C8A45A; }
 .btn-profile:hover .chevron-icon { transform: translateY(2px); color: #4B5563; }
-
 /* =========================
 LAYOUT PRINCIPAL
 ========================= */
