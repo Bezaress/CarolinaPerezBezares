@@ -225,6 +225,7 @@ MAPA INTERACTIVO
 }
 .legend div { display: flex; align-items: center; gap: 8px; }
 .color { width: 14px; height: 14px; border-radius: 4px; }
+.color.stage { background: #9CA3AF; }
 .color.fan { background: #D97706; }
 .color.vip { background: #7C3AED; }
 .color.preferente { background: #2563EB; }
