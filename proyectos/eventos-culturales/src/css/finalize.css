@@ -21,7 +21,7 @@ img {
 
 .container {
     width: 90%;
-    max-width: 1500px;
+    max-width: 1150px;
     margin: auto;
 }
 
@@ -155,14 +155,15 @@ EVENTO INFO
     margin-top: 40px; /* Lo separa de la info del evento */
     margin-bottom: 12px; /* Lo pega más al mapa */
     font-weight: 600;
-    font-size: 16px;
-    color: #C8A45A;
+    font-size: 12px;
+    color: #c8a35acd;
     text-align: center; /* Centramos el texto respecto al mapa */
 }
 
 /* =========================
 MAPA INTERACTIVO
 ========================= */
+
 .map-container {
     width: 100%;
     max-width: 100%;
